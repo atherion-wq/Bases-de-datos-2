@@ -1,0 +1,52 @@
+create database Tarea01
+
+Create table vehiculo(
+	idVechiculo serial primary key,
+	marca varchar(20),
+	modelo varchar(50),
+	año int,
+	kilometraje int)
+
+Create table Dueño(
+	idDueño serial primary key,
+	nombre varchar(15),
+	apellidos varchar(50),
+	cedula varchar(20),
+	telefono int)
+	
+alter table vehiculo
+add idDueño integer
+
+alter table vehiculo 
+add constraint fkTest
+foreign key(idDueño) 
+references Dueño(idDueño)
+
+select * from Dueño
+select * from Vehiculo
+
+insert into Dueño (nombre,apellidos,cedula,telefono) values ('Cristopher','Zùñiga Jimènez','702660144',84058267)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Enzo','Morales Myers','0102040505',784598774)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Jahir','Rostran Jimènez','1259711',000000000)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Joel','Matute Castro','45784145',12345678)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Jujin','Marruecos Pastor','45784578',84985612)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Adriana','Hernandez Monterroza','32659878',50648798)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Daniel','Torres Frias','702660144',84058267)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Cristopher','Guzman Avila','702660144',84058267)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Diana','Forero Peña','702660144',84058267)
+insert into dueño (nombre,apellidos,cedula,telefono) values ('Laura','Garcia Rueda','1245032',0000125478)
+
+select * from Vehiculo
+
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Ferrari','F8 spider','2020',0,1)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Toyota','Corolla','2001',745,2)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Hyundai','Atos','2010',987,3)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('volkswagen','Amarok','1999',326,4)
+																	
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Suzuki','Celerio','2020',1500,5)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Suzuki','Swift','2020',87,6)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Toyota','Prado','2015',2000,7)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Toyota','SW4','1998',50000,8)
+																	
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Toyota','Yaris','2020',0,9)
+insert into vehiculo (marca,modelo,año,kilometraje,iddueño) values ('Toyota','Yaris','2020',0,10)
